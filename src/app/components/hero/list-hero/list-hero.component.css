@@ -1,0 +1,16 @@
+.plus {
+    margin-bottom: 15px;
+}
+.table {
+    width: 90%;
+    min-height: 500px;
+}
+a > i{
+    margin-right: 15px;
+}
+.edit{
+    color: yellow;
+}
+.delete{
+    color: red;
+}

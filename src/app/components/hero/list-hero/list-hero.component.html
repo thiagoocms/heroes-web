@@ -1,0 +1,53 @@
+<div class="table">
+    <button mat-raised-button class="btn plus"><i class="material-icons">add</i></button>
+    <table mat-table class="mat-elevation-z8" [dataSource]="dataSource" *ngIf="dataSource != null">
+  
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nome </th>
+        <td mat-cell *matCellDef="let hero"> {{hero.name}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="race">
+        <th mat-header-cell *matHeaderCellDef> Raça </th>
+        <td mat-cell *matCellDef="let hero"> {{hero.race}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="strength">
+        <th mat-header-cell *matHeaderCellDef> Força </th>
+        <td mat-cell *matCellDef="let hero"> {{hero.strength}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="agility">
+        <th mat-header-cell *matHeaderCellDef> Agilidade </th>
+        <td mat-cell *matCellDef="let hero"> {{hero.agility}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dexterity">
+        <th mat-header-cell *matHeaderCellDef> dexterity </th>
+        <td mat-cell *matCellDef="let hero"> {{hero.dexterity}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="intelligence">
+        <th mat-header-cell *matHeaderCellDef> Inteligencia </th>
+        <td mat-cell *matCellDef="let hero"> {{hero.intelligence}} </td>
+      </ng-container>
+      
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Ações </th>
+        <td mat-cell *matCellDef="let element">
+        <a routerLink="/home/atualizar/" class="edit">
+          <i class="material-icons">edit</i>
+        </a>
+        <a routerLink="/home/deletar/" class="delete">
+          <i class="material-icons">delete</i>
+        </a>
+    
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+    </table>
+ 
+</div>  
