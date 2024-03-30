@@ -24,4 +24,8 @@ export class HeroService {
   findAll(): Observable<Hero[]>  {
     return this.http.get<Hero[]>(this.baseUrl)
   }
+
+  deleteById(id: string):  Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`)
+  }
 }

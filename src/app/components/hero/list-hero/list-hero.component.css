@@ -1,5 +1,9 @@
 .plus {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    background: #ffff;
+    border: none;
+    border-radius: 5px;
+    color: #2196F3;
 }
 .table {
     min-width: 700px;

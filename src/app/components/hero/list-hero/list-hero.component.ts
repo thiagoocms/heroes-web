@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { HeroService } from '../hero.service';
 import { Hero } from '../hero.model';
+import { ToastrService } from 'ngx-toastr';
 
 export interface he {
   name:string
@@ -27,9 +28,9 @@ export class ListHeroComponent implements OnInit{
 
   displayedColumns: string[] = ['name', 'race', 'strength', 'agility', 'dexterity', 'intelligence', 'action'];
   
-  dataSource: any = null;
+  dataSource: MatTableDataSource<Hero> = new MatTableDataSource<Hero>([])
 
-  constructor(private heroService: HeroService){}
+  constructor(private heroService: HeroService, private toast: ToastrService){}
 
   ngOnInit(): void {
   this.heroService.findAll().subscribe(res => {
@@ -38,6 +39,13 @@ export class ListHeroComponent implements OnInit{
   }
 
   delete(id: string) {
-    console.log(id)
+    this.heroService.deleteById(id).subscribe(res => {
+      this.dataSource.data = this.dataSource.data.filter(hero => hero.hero_id !== id)
+      this.toast.success("Heroi apagado com sucesso!")
+    },
+    err => {
+      this.toast.error(err.error.message)
+    })
+
   }
 }
