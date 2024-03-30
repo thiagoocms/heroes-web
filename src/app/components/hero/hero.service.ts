@@ -28,4 +28,17 @@ export class HeroService {
   deleteById(id: string):  Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`)
   }
+
+  findById(id: string): Observable<Hero>  {
+    return this.http.get<Hero>(`${this.baseUrl}/${id}`)
+  }
+
+  update(id: string, hero: Hero): Observable<Hero> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+     };
+    return this.http.put<Hero>(`${this.baseUrl}/${id}`, hero, httpOptions)
+   }
 }

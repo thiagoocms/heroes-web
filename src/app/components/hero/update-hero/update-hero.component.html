@@ -1,0 +1,78 @@
+<form id="form">
+    <!-- FORM HEADER -->
+    <div id="form_header">
+        <h1>Atualizar</h1>
+    </div>
+    
+    <!-- INPUTS -->
+    <div id="inputs">
+
+        <div class="input-box">
+            <label for="name">
+                Id
+                <div class="input-field">
+                    <input type="text" id="id" name="id" [(ngModel)]="id" disabled="true">
+                </div>
+            </label>
+        </div>
+        <div class="input-box">
+            <label for="name">
+                Nome
+                <div class="input-field">
+                    <input type="text" id="name" name="name" [(ngModel)]="name" placeholder="Batman">
+                </div>
+            </label>
+        </div>
+        
+        <div class="input-box">
+            <label for="group">
+            Raça 
+                <div name="group" class="radio-group">
+                    <input type="radio" id="human" name="race" value="HUMAN" [(ngModel)]="selectedRace" >
+                    <label for="human">Humano</label>
+
+                    <input type="radio" id="alien" name="race" value="ALIEN" [(ngModel)]="selectedRace" >
+                    <label for="alien">Alien</label>
+
+                    <input type="radio" id="divine" name="race" value="DIVINE" [(ngModel)]="selectedRace" >
+                    <label for="divine">Deus</label>
+
+                    <input type="radio" id="cyborg" name="race" value="CYBORG" [(ngModel)]="selectedRace" >
+                    <label for="cyborg">Cyborg</label>
+                </div> 
+            </label>                  
+        </div>
+        <div class="progress-box">
+            <div class="input-box">
+                <label for="intelligence"> Inteligência: </label>
+                <label for="intelligence">{{progressIntelligence}}</label>
+                <input name="intelligence" type="range" class="progress-range" id="intelligence" [(ngModel)]="progressIntelligence" min="0" max="100">
+            </div>
+            <div class="input-box">
+                <label for="agility"> Agilidade: </label>
+                <label for="agility">{{progressAgility}}</label>
+                <input name="agility" type="range" class="progress-range" id="agility" [(ngModel)]="progressAgility" min="0" max="100">
+            </div>
+        </div>
+        <div class="progress-box">
+            <div class="input-box">
+                <label for="dexterity"> Destreza: </label>
+                <label for="dexterity">{{progressDexterity}}</label>
+                <input name="dexterity" type="range" class="progress-range" id="dexterity" [(ngModel)]="progressDexterity" min="0" max="100">
+            </div>
+            <div class="input-box">
+                <label for="strength"> Força: </label>
+                <label for="strength">{{progressStrength}}</label>
+                <input name="strength" type="range" class="progress-range" id="strength" [(ngModel)]="progressStrength" min="0" max="100">
+            </div>
+        </div>
+    </div>
+   <div class="button-box">
+    <button type="submit" id="cancel" routerLink="/list">
+        Cancelar
+    </button>
+    <button type="submit" id="save" (click)="update()">
+        Salvar
+    </button>
+   </div>
+</form>

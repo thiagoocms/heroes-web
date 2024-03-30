@@ -10,6 +10,7 @@ import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateHeroComponent } from './components/hero/create-hero/create-hero.component';
 import { ToastrModule } from 'ngx-toastr';
+import { UpdateHeroComponent } from './components/hero/update-hero/update-hero.component';
 
 
 
@@ -17,7 +18,8 @@ import { ToastrModule } from 'ngx-toastr';
   declarations: [
     AppComponent,
     ListHeroComponent,
-    CreateHeroComponent
+    CreateHeroComponent,
+    UpdateHeroComponent
   ],
   imports: [
     BrowserModule,

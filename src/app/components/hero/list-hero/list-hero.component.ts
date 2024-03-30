@@ -4,21 +4,6 @@ import { HeroService } from '../hero.service';
 import { Hero } from '../hero.model';
 import { ToastrService } from 'ngx-toastr';
 
-export interface he {
-  name:string
-  description: string
-}
-const heroes =  [
-  { name: 'Superman', description: 'O Homem de Aço' },
-  { name: 'Batman', description: 'O Cavaleiro das Trevas' },
-  { name: 'Mulher-Maravilha', description: 'A Princesa de Themyscira' },
-  { name: 'Homem-Aranha', description: 'O Amigão da Vizinhança' },
-  { name: 'Homem de Ferro', description: 'O Vingador Dourado' },
-  { name: 'Capitão América', description: 'O Sentinela da Liberdade' },
-  { name: 'Flash', description: 'O Velocista Escarlate' },
-  { name: 'Lanterna Verde', description: 'O Guardião do Setor Espacial 2814' }
-];
-
 @Component({
   selector: 'app-list-hero',
   templateUrl: './list-hero.component.html',
