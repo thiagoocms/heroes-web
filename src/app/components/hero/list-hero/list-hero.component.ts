@@ -36,4 +36,8 @@ export class ListHeroComponent implements OnInit{
     this.dataSource = new MatTableDataSource<Hero>(res)
   })
   }
+
+  delete(id: string) {
+    console.log(id)
+  }
 }

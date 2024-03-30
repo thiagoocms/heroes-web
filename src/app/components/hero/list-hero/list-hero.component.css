@@ -2,7 +2,7 @@
     margin-bottom: 15px;
 }
 .table {
-    width: 90%;
+    min-width: 700px;
     min-height: 500px;
 }
 a > i{

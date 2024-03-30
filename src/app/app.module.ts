@@ -8,13 +8,16 @@ import { ListHeroComponent } from './components/hero/list-hero/list-hero.compone
 import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateHeroComponent } from './components/hero/create-hero/create-hero.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListHeroComponent
+    ListHeroComponent,
+    CreateHeroComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     FormsModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
