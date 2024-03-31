@@ -1,0 +1,49 @@
+<button mat-raised-button routerLink="/list" class="btn"><i class="material-icons">arrow_back</i></button>
+<div class="box">
+ 
+    <form action="" id="form">
+        <mat-form-field class="select-field">
+            <mat-label>Selecione o Heroi</mat-label>
+            <mat-select class="select" [(value)]="selectedHero">
+              <mat-option *ngFor="let option of options" [value]="option.hero_id">{{ option.name }}</mat-option>
+              
+            </mat-select>
+          </mat-form-field>
+          <span class="img" ></span>
+        
+          <mat-form-field class="select-field">
+            <mat-label>Selecione o seu Oponente</mat-label>
+            <mat-select class="select" [(value)]="selectedOponent">
+              <mat-option *ngFor="let option of options" [value]="option.hero_id">{{ option.name }}</mat-option>
+              
+            </mat-select>
+          </mat-form-field>
+          <button type="submit" id="btn" (click)="compare()">
+            Comparar
+        </button>
+    </form>
+
+    <div class="container" *ngIf="bool == true">
+        <table class="vertical-table">
+    
+          <tr>
+            <th>Força</th>
+            <td [style.color]="getColor(hero.strength_difference)">{{hero.strength_difference}}</td>
+          </tr>
+          <tr>
+            <th>Agilidade</th>
+            <td [style.color]="getColor(hero.agility_difference)">{{hero.agility_difference}}</td>
+          </tr>
+          <tr>
+            <th>Destreza</th>
+            <td [style.color]="getColor(hero.dexterity_difference)">{{hero.dexterity_difference}}</td>
+          </tr>
+          <tr>
+            <th>Inteligência</th>
+            <td [style.color]="getColor(hero.intelligence_difference)">{{hero.intelligence_difference}}</td>
+          </tr>
+        </table>
+      </div>
+      
+
+</div>

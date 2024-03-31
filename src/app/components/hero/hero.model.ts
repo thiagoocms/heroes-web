@@ -21,3 +21,21 @@ export class Hero {
         this.intelligence = intelligence;
     }
 }
+
+export class HeroCompare {
+    hero_id: string = '';
+    opponent_id: string = '';
+    strength_difference: number = 0;
+    agility_difference: number = 0;
+    dexterity_difference: number = 0;
+    intelligence_difference: number = 0;
+}
+
+export class HeroCompareRequest {
+    hero_id: string = '';
+    opponent_id: string = '';
+   constructor(heroId: string, opponentId: string) {
+    this.hero_id = heroId
+    this.opponent_id = opponentId
+   }
+}

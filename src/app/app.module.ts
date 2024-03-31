@@ -10,7 +10,10 @@ import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateHeroComponent } from './components/hero/create-hero/create-hero.component';
 import { ToastrModule } from 'ngx-toastr';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { UpdateHeroComponent } from './components/hero/update-hero/update-hero.component';
+import { CompareHeroComponent } from './components/hero/compare-hero/compare-hero.component';
 
 
 
@@ -19,7 +22,8 @@ import { UpdateHeroComponent } from './components/hero/update-hero/update-hero.c
     AppComponent,
     ListHeroComponent,
     CreateHeroComponent,
-    UpdateHeroComponent
+    UpdateHeroComponent,
+    CompareHeroComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,9 @@ import { UpdateHeroComponent } from './components/hero/update-hero/update-hero.c
     FormsModule,
     MatTableModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MatFormFieldModule,
+    MatSelectModule   
   ],
   providers: [],
   bootstrap: [AppComponent]

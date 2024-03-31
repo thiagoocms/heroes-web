@@ -1,10 +1,14 @@
-.plus {
+.btn {
     margin-bottom: 5px;
     background: #ffff;
     border: none;
     border-radius: 5px;
-    color: #2196F3;
+    cursor: pointer;
 }
+.compare {
+    margin-left: 5px;
+}
+
 .table {
     min-width: 700px;
     min-height: 500px;
@@ -14,7 +18,9 @@ a > i{
 }
 .edit{
     color: yellow;
+    cursor: pointer;
 }
 .delete{
     color: red;
+    cursor: pointer;
 }

@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Hero } from './hero.model';
+import { Hero, HeroCompare, HeroCompareRequest } from './hero.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -40,5 +40,14 @@ export class HeroService {
       })
      };
     return this.http.put<Hero>(`${this.baseUrl}/${id}`, hero, httpOptions)
+   }
+
+   compareTo(hero: HeroCompareRequest): Observable<HeroCompare> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+     };
+    return this.http.post<HeroCompare>(`${this.baseUrl}/compare-to`, hero, httpOptions)
    }
 }

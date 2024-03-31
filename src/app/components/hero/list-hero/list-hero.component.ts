@@ -9,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './list-hero.component.html',
   styleUrls: ['./list-hero.component.css']
 })
-export class ListHeroComponent implements OnInit{
+export class ListHeroComponent implements OnInit {
 
   displayedColumns: string[] = ['name', 'race', 'strength', 'agility', 'dexterity', 'intelligence', 'action'];
   
